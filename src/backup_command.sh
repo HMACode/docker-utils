@@ -3,8 +3,8 @@ output_filename=${args[--out]}
 
 # Check input not empty
 if [  -z "$volume_name" ]; then
-	echo "Name of the volume cannot be empty"
-	exit 1
+    echo "Name of the volume cannot be empty"
+    exit 1
 fi
 
 # Check volume exists
@@ -15,7 +15,7 @@ fi
 
 # Default filename
 if [ -z "$output_filename" ]; then
-	output_filename="bkup-volume-$volume_name-$(date +%s).tar"
+    output_filename="bkup-volume-$volume_name-$(date +%s).tar"
 fi
 
 if ! [[ "$output_filename" =~ ^[a-zA-Z0-9_.-]+.tar$ ]]; then
