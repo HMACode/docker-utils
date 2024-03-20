@@ -1,0 +1,46 @@
+name: docker-utils
+help: Utilily commands for managing docker related tasks
+version: 1.0.0
+
+commands:
+- name: backup
+  alias: b
+  help: Backup a docker volume
+
+  args:
+  - name: volume
+    required: true
+    help: Name of the volume to backup
+
+  flags:
+  - long: --out
+    short: -o
+    arg: output
+    help: "Name of the generated backup file (defaults to the name of the volume and the current date)"
+    required: false
+
+  examples:
+  - docker-utils backup postgres-data
+  - docker-utils backup postgres-data --out bkup.tar
+
+
+- name: restore
+  alias: r
+  help: Restore a volume using a backup file
+  args:
+  - name: backup-file
+    required: true
+    help: Backup file to restore volume from
+  - name: volume
+    required: true
+    help: the name of the volume to create
+
+  flags:
+  - long: --force
+    short: -f
+    help: delete existing volume (if any)
+    required: false
+
+  examples:
+  -  docker-utils restore bkup-file.tar new-volume-name
+  -  docker-utils restore bkup-file.tar new-volume-name --force 
