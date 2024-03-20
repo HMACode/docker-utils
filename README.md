@@ -1,6 +1,6 @@
 
 # Docker-Utils
-+ A cli containing basic commands, aiming to help simplify some docker related tasks. For now it only supports docker volume backup and restore. 
++ A cli containing basic commands, aiming to help simplify some docker related tasks. For now it only supports docker volume backup and restore based on recommondations on [docker documentation](https://docs.docker.com/storage/volumes/#back-up-a-volume) 
 + Cli is built using [Bashly](https://bashly.dannyb.co/). 
 
 
@@ -17,6 +17,10 @@
 
 ````bash
 docker-utils --help
+````
++ Output:
+````bash
+
 docker-utils - Utilily commands for managing docker related tasks
 
 Usage:
@@ -35,3 +39,6 @@ Options:
   --version, -v
     Show version number
 ````
+
+# Updates 
++ After any changes, you can rebuild the cli using command `bashly generate`. Please follow [bashly documentation](https://bashly.dannyb.co/usage/getting-started/) for more info. 
